@@ -23,6 +23,7 @@
 					<h3 class="text-center">Migration Address</h3>
 					<input type="text" class="form-control" name="url_from" placeholder="From" value="<?php if(isset($url_from))echo $url_from; ?>"> <br>
 					<input type="text" class="form-control" name="url_to" placeholder="To" value="<?php if(isset($url_to))echo $url_to; ?>"> <br>
+					<input type="checkbox" name="execute" value="1"> Execute <br>
 				</div>
 			</div>
 			<div class="row">

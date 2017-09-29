@@ -7,17 +7,22 @@ class Migrations extends Core {
   function migrate(){
     if(isset($_POST['url_to']) && $_POST['url_to'] != NULL){
       extract($_POST);
-      //Options
-      $sql = "UPDATE ".$this->tblprefix."_options SET option_value = replace(option_value, '$url_from', '$url_to') WHERE option_name = 'home' OR option_name = 'siteurl';";
-      $this->execute($sql,'update');
-      //Posts
-      $sql = "UPDATE ".$this->tblprefix."_posts SET post_content = replace(post_content, '$url_from', '$url_to');";
-      $this->execute($sql,'update');
-      //Post Meta
-      $sql = "UPDATE ".$this->tblprefix."_postmeta SET meta_value = replace(meta_value,'$url_from','$url_to');";
-      $this->execute($sql,'update');
 
-      return 'SUCCESS!';
+      //Options
+        $sql = "UPDATE ".$this->tblprefix."_options SET option_value = replace(option_value, '$url_from', '$url_to') WHERE option_name = 'home' OR option_name = 'siteurl'; ";
+      //Posts
+        $sql .= "UPDATE ".$this->tblprefix."_posts SET post_content = replace(post_content, '$url_from', '$url_to'); ";
+      //Post Meta
+        $sql .= "UPDATE ".$this->tblprefix."_postmeta SET meta_value = replace(meta_value,'$url_from','$url_to'); ";
+
+      // $this->debug($sql); 
+
+      if(isset($execute) && $execute==1){
+        $this->execute($sql,'update');
+        return 'SUCCESS!';
+      } else {
+        return $sql;
+      }
     }
   }
 
