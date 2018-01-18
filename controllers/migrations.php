@@ -11,9 +11,9 @@ class Migrations extends Core {
       //Options
         $sql = "UPDATE ".$this->tblprefix."_options SET option_value = replace(option_value, '$url_from', '$url_to') WHERE option_name = 'home' OR option_name = 'siteurl'; ";
       //Posts
-        $sql .= "UPDATE ".$this->tblprefix."_posts SET post_content = replace(post_content, '$url_from', '$url_to'); ";
+        // $sql .= "UPDATE ".$this->tblprefix."_posts SET post_content = replace(post_content, '$url_from', '$url_to'); ";
       //Post Meta
-        $sql .= "UPDATE ".$this->tblprefix."_postmeta SET meta_value = replace(meta_value,'$url_from','$url_to'); ";
+        // $sql .= "UPDATE ".$this->tblprefix."_postmeta SET meta_value = replace(meta_value,'$url_from','$url_to'); ";
 
       // $this->debug($sql); 
 
