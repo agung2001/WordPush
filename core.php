@@ -3,25 +3,31 @@
 class Core {
 
 	public $conn;
-	public $servername = "localhost";
+	public $servername ;
 	public $dbname;
 	public $dbusername;
 	public $dbpassword;
 	public $tblprefix;
 
 	function init(){
+		$setting = require('setting.php');
+		$this->servername	= $setting['servername'];
+		$this->dbusername 	= $setting['dbusername'];
+		$this->dbpassword 	= $setting['dbpassword'];		
 		if($_POST){
-			extract($_POST);
-			$this->dbname = $dbname;
-			$this->dbusername = $dbusername;
-			$this->dbpassword = $dbpassword;
-			$this->tblprefix = $tblprefix;
+			$this->dbname 		= $_POST['dbname'];
+			$this->tblprefix 	= $_POST['tblprefix'];
 		}
 	}
 
 	function connect(){
 		if($_POST){
-			$this->conn = new mysqli($this->servername, $this->dbusername, $this->dbpassword, $this->dbname);
+			$this->conn = new mysqli(
+				$this->servername, 
+				$this->dbusername, 
+				$this->dbpassword, 
+				$this->dbname
+			);
 			if ($this->conn->connect_error)
 				die("Connection failed: " . $this->conn->connect_error);
 		}

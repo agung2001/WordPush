@@ -26,6 +26,34 @@ class Migrations extends Core {
     }
   }
 
+  function showDatabases(){
+    $pdo    = new PDO( 
+      "mysql:host=".$this->servername, 
+      $this->dbusername, 
+      $this->dbpassword 
+    );
+    $statement = $pdo->prepare("SHOW DATABASES;");
+    $statement->execute();
+    $databases = $statement->fetchAll(PDO::FETCH_NUM);
+    $data      = array();
+    foreach($databases as $database)
+      $data[] = $database[0];
+    return $data;
+
+    // $conn     = mysql_connect(
+    //     $this->servername,
+    //     $this->dbusername,
+    //     $this->dbpassword
+    // );
+    // $result   = mysql_query('SHOW DATABASES');
+    // $databases= array();
+    // while($row = mysql_fetch_array($result)){
+    //   $databases = $row[0];
+    // }
+    // mysql_close($conn);
+    // return $databases;
+  }
+
   function showSiteURL(){
     if($_POST){
       $tblname = $this->tblprefix."_options";

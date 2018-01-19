@@ -5,13 +5,15 @@
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<h3 class="text-center">Database Info</h3>
-					<input type="text" class="form-control" name="dbname" placeholder="name" value="<?php if(isset($dbname))echo $dbname; ?>" required> <br>
+					<select name="dbname" class="form-control" required>
+						<?php foreach($databases as $database): ?>
+							<option value="<?= $database ?>" <?php if(isset($dbname) && $dbname==$database) echo 'selected'; ?>><?= $database ?></option>
+						<?php endforeach; ?>
+					</select>
+					<br>
 					<input type="text" class="form-control" name="tblprefix" placeholder="prefix" value="<?php if(isset($tblprefix))echo $tblprefix; ?>" required>
-					<br><br>
-					<input type="text" class="form-control" name="dbusername" placeholder="username" value="<?php if(isset($dbusername))echo $dbusername; ?>" required> <br>
-					<input type="password" class="form-control" name="dbpassword" placeholder="password" value="<?php if(isset($dbpassword))echo $dbpassword; ?>"> <br>
 				</div>
-			</div>
+			</div><br>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<input type="submit" class="btn pull-right" value="Find">

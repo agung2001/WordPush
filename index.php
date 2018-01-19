@@ -11,16 +11,18 @@
 	//Call function
 	$migrations->init();
 	$migrations->connect();
-	$url_from = $migrations->showSiteURL();
-	$result = $migrations->migrate();
+	$databases	= $migrations->showDatabases();
+	$url_from 	= $migrations->showSiteURL();
+	$result 	= $migrations->migrate();
 
 /*
 *  View Area
 */
 	$data = [
-		'controller' => 'migrations',
-		'action' => 'init',
-		'result' => $result
+		'controller'	=> 'migrations',
+		'action' 		=> 'init',
+		'result' 		=> $result,
+		'databases' 	=> $databases,
 	];
 	include('views/layout.php');
 
