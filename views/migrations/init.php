@@ -1,7 +1,7 @@
 	<div class="container">
 		<h1 class="text-center">Wordpress Migrator</h1>
-		<form class="form" method="post">
 		<!-- Database Info -->
+		<form class="form" method="post">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<h3 class="text-center">Database Info</h3>
@@ -10,8 +10,6 @@
 							<option value="<?= $database ?>" <?php if(isset($dbname) && $dbname==$database) echo 'selected'; ?>><?= $database ?></option>
 						<?php endforeach; ?>
 					</select>
-					<br>
-					<input type="text" class="form-control" name="tblprefix" placeholder="prefix" value="<?php if(isset($tblprefix))echo $tblprefix; ?>" required>
 				</div>
 			</div><br>
 			<div class="row">
@@ -20,6 +18,12 @@
 				</div>
 			</div>
 		<!-- Migrator -->
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<h3 class="text-center">Table Informations</h3>
+					<input type="text" class="form-control" name="tblprefix" placeholder="prefix" value="<?php if(isset($tblprefix))echo $tblprefix; ?>">
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<h3 class="text-center">Migration Address</h3>

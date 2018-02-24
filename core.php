@@ -16,7 +16,6 @@ class Core {
 		$this->dbpassword 	= $setting['dbpassword'];		
 		if($_POST){
 			$this->dbname 		= $_POST['dbname'];
-			$this->tblprefix 	= $_POST['tblprefix'];
 		}
 	}
 
