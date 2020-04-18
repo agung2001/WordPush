@@ -8,4 +8,4 @@ Simple app to migrate wordpress `site_url` and `home_url` from database.
 * Run the app through your PHP stack (LAMP, MAMP, etc)
 
 ## Screenshot
-<div style="text-align:center"><img src="/assets/img/migrator.png" alt="Wordpress Migrator" /></div>
+<p align="center"><img src="/assets/img/migrator.png"></p>
