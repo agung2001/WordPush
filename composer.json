@@ -1,0 +1,18 @@
+{
+    "name": "agung2001/wordpush",
+    "description": "Database migration tools for wordpress.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Agung Sundoro",
+            "email": "muhagung2001@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload"		: {
+        "classmap":[
+            "src/Controller",
+            "src/Model"
+        ]
+    }
+}

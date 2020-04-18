@@ -1,0 +1,9 @@
+# IDE
+.idea
+
+# Vendor
+/vendor/
+composer.lock
+
+# Mac
+.DS_STORE
