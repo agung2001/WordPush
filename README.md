@@ -1,7 +1,10 @@
 # WordPush
-This app created for managing multiple wordpress on localserver
 
-Alpha Version
-- It only include wordpress sql migration
+Simple app to migrate wordpress `site_url` and `home_url` from database.
 
-![Alt text](/assets/img/migrator.png?raw=true "Wordpress Migrator")
+## Setup & Installation 
+* Update composer package `composer update`
+* Run the app through your PHP stack
+
+## Screenshot
+<div style="text-align:center"><img src="/assets/img/migrator.png" alt="Wordpress Migrator" /></div>
